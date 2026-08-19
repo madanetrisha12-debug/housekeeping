@@ -1587,39 +1587,37 @@ Sambhaji Madane
 
 <script>
 
-
-/* =========================
-   SELECT SERVICE
-========================= */
-
 function chooseService(service){
 
-document.getElementById("service")
-.value = service;
+    document.getElementById("service").value = service;
 
-
-document.getElementById("booking")
-.scrollIntoView({
-
-behavior:"smooth"
-
-});
+    document.getElementById("booking").scrollIntoView({
+        behavior:"smooth"
+    });
 
 }
 
 
-
-/* =========================
-   BOOKING
-========================= */
 function confirmBooking(){
 
-    let name = document.getElementById("name").value.trim();
-    let mobile = document.getElementById("mobile").value.trim();
-    let service = document.getElementById("service").value;
-    let date = document.getElementById("date").value;
-    let time = document.getElementById("time").value;
-    let address = document.getElementById("address").value.trim();
+    let name =
+        document.getElementById("name").value.trim();
+
+    let mobile =
+        document.getElementById("mobile").value.trim();
+
+    let service =
+        document.getElementById("service").value;
+
+    let date =
+        document.getElementById("date").value;
+
+    let time =
+        document.getElementById("time").value;
+
+    let address =
+        document.getElementById("address").value.trim();
+
 
     if(
         name === "" ||
@@ -1629,227 +1627,63 @@ function confirmBooking(){
         time === "" ||
         address === ""
     ){
+
         alert("कृपया सर्व माहिती भरा.");
         return;
+
     }
 
-    let bookingID =
-        "HK" + Math.floor(100000 + Math.random() * 900000);
-
-    let message =
-        "🧹 HOUSEKEEPING BOOKING\n\n" +
-        "Booking ID: " + bookingID + "\n" +
-        "Name: " + name + "\n" +
-        "Mobile: " + mobile + "\n" +
-        "Service: " + service + "\n" +
-        "Date: " + date + "\n" +
-        "Time: " + time + "\n" +
-        "Address: " + address + "\n\n" +
-        "Owner: Sambhaji Madane";
-
-    let whatsappURL =
-        "https://wa.me/919822197880?text=" +
-        encodeURIComponent(message);
-
-    window.location.href = whatsappURL;
-}
-
 
     let bookingID =
         "HK" + Math.floor(100000 + Math.random() * 900000);
 
+
     let message =
         "🧹 HOUSEKEEPING BOOKING\n\n" +
+
         "Booking ID: " + bookingID + "\n" +
+
         "Name: " + name + "\n" +
+
         "Mobile: " + mobile + "\n" +
+
         "Service: " + service + "\n" +
+
         "Date: " + date + "\n" +
+
         "Time: " + time + "\n" +
+
         "Address: " + address + "\n\n" +
-        "Owner: Sambhaji Madane";
+
+        "Owner: Er.Sambhaji Madane";
+
 
     let whatsapp1 =
         "https://wa.me/919822197880?text=" +
         encodeURIComponent(message);
 
+
     let whatsapp2 =
         "https://wa.me/918830270043?text=" +
         encodeURIComponent(message);
 
+
     alert(
         "Booking तयार झाली! 🎉\n\n" +
-        "Booking ID: " + bookingID +
-        "\n\nआता WhatsApp नंबर निवडा."
+        "Booking ID: " + bookingID
     );
 
-    let oldBox = document.getElementById("whatsappButtons");
 
-    if(oldBox){
-        oldBox.remove();
-    }
+    window.open(whatsapp1, "_blank");
 
-    let box = document.createElement("div");
 
-    box.id = "whatsappButtons";
+    setTimeout(function(){
 
-    box.style.marginTop = "20px";
-    box.style.textAlign = "center";
+        window.open(whatsapp2, "_blank");
 
-    box.innerHTML =
-
-        "<p style='font-weight:bold;margin-bottom:12px'>" +
-        "Booking WhatsApp वर पाठवा:" +
-        "</p>" +
-
-        "<a href='" + whatsapp1 +
-        "' target='_blank' " +
-        "style='display:block;background:#25D366;color:white;" +
-        "padding:14px;margin:8px 0;text-decoration:none;" +
-        "border-radius:5px;font-weight:bold;'>" +
-
-        "💬 WhatsApp – 98221 97880" +
-
-        "</a>" +
-
-        "<a href='" + whatsapp2 +
-        "' target='_blank' " +
-        "style='display:block;background:#25D366;color:white;" +
-        "padding:14px;margin:8px 0;text-decoration:none;" +
-        "border-radius:5px;font-weight:bold;'>" +
-
-        "💬 WhatsApp – 88302 70043" +
-
-        "</a>";
-
-    document
-        .querySelector(".booking")
-        .appendChild(box);
-}
-
-
-
-/* BOOKING ID */
-
-let bookingID =
-
-"HK" +
-
-Math.floor(
-
-100000 +
-
-Math.random() * 900000
-
-);
-
-
-
-/* WHATSAPP MESSAGE */
-
-let message =
-
-"🧹 HOUSEKEEPING BOOKING\n\n" +
-
-"Booking ID: " +
-bookingID +
-
-"\n\nName: " +
-name +
-
-"\nMobile: " +
-mobile +
-
-"\nService: " +
-service +
-
-"\nDate: " +
-date +
-
-"\nTime: " +
-time +
-
-"\nAddress: " +
-address +
-
-"\n\nOwner: Er.Sambhaji Madane";
-
-
-
-// WhatsApp message
-
-let message =
-
-"🧹 HOUSEKEEPING BOOKING\n\n" +
-
-"Booking ID: " + bookingID +
-
-"\n\nName: " + name +
-
-"\nMobile: " + mobile +
-
-"\nService: " + service +
-
-"\nDate: " + date +
-
-"\nTime: " + time +
-
-"\nAddress: " + address +
-
-"\n\nOwner: Er.Sambhaji Madane";
-
-
-// WhatsApp Number 1
-
-let whatsapp1 =
-
-"https://wa.me/919822197880?text=" +
-
-encodeURIComponent(message);
-
-
-// WhatsApp Number 2
-
-let whatsapp2 =
-
-"https://wa.me/918830270043?text=" +
-
-encodeURIComponent(message);
-
-
-// Open WhatsApp Number 1
-
-window.open(
-    whatsapp1,
-    "_blank"
-);
-
-
-// Open WhatsApp Number 2
-
-setTimeout(function(){
-
-    window.open(
-        whatsapp2,
-        "_blank"
-    );
-
-},800);
-
-
-alert(
-
-"Booking Request Ready! 🎉\n\n" +
-
-"Booking ID: " +
-
-bookingID
-
-);
-
+    }, 1000);
 
 }
-
 
 </script>
 
