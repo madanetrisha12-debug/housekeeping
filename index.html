@@ -1612,7 +1612,6 @@ behavior:"smooth"
 /* =========================
    BOOKING
 ========================= */
-
 function confirmBooking(){
 
     let name = document.getElementById("name").value.trim();
@@ -1633,6 +1632,28 @@ function confirmBooking(){
         alert("कृपया सर्व माहिती भरा.");
         return;
     }
+
+    let bookingID =
+        "HK" + Math.floor(100000 + Math.random() * 900000);
+
+    let message =
+        "🧹 HOUSEKEEPING BOOKING\n\n" +
+        "Booking ID: " + bookingID + "\n" +
+        "Name: " + name + "\n" +
+        "Mobile: " + mobile + "\n" +
+        "Service: " + service + "\n" +
+        "Date: " + date + "\n" +
+        "Time: " + time + "\n" +
+        "Address: " + address + "\n\n" +
+        "Owner: Sambhaji Madane";
+
+    let whatsappURL =
+        "https://wa.me/919822197880?text=" +
+        encodeURIComponent(message);
+
+    window.location.href = whatsappURL;
+}
+
 
     let bookingID =
         "HK" + Math.floor(100000 + Math.random() * 900000);
