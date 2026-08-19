@@ -1533,7 +1533,7 @@ housekeeping services.
 
 <p>
 👤 <strong>
-Sambhaji Madane
+Er.Sambhaji Madane
 </strong>
 </p>
 
@@ -1541,6 +1541,12 @@ Sambhaji Madane
 <p>
 📞 <strong>
 98221 97880
+</strong>
+</p
+
+   <p>
+📞 <strong>
+8830270043
 </strong>
 </p>
 
@@ -1710,23 +1716,69 @@ time +
 "\nAddress: " +
 address +
 
-"\n\nOwner: Sambhaji Madane";
+"\n\nOwner: Er.Sambhaji Madane";
 
 
 
-let whatsappURL =
+// WhatsApp message
+
+let message =
+
+"🧹 HOUSEKEEPING BOOKING\n\n" +
+
+"Booking ID: " + bookingID +
+
+"\n\nName: " + name +
+
+"\nMobile: " + mobile +
+
+"\nService: " + service +
+
+"\nDate: " + date +
+
+"\nTime: " + time +
+
+"\nAddress: " + address +
+
+"\n\nOwner: Er.Sambhaji Madane";
+
+
+// WhatsApp Number 1
+
+let whatsapp1 =
 
 "https://wa.me/919822197880?text=" +
 
 encodeURIComponent(message);
 
 
+// WhatsApp Number 2
+
+let whatsapp2 =
+
+"https://wa.me/918830270043?text=" +
+
+encodeURIComponent(message);
+
+
+// Open WhatsApp Number 1
 
 window.open(
-whatsappURL,
-"_blank"
+    whatsapp1,
+    "_blank"
 );
 
+
+// Open WhatsApp Number 2
+
+setTimeout(function(){
+
+    window.open(
+        whatsapp2,
+        "_blank"
+    );
+
+},800);
 
 
 alert(
