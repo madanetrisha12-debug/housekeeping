@@ -1615,60 +1615,95 @@ behavior:"smooth"
 
 function confirmBooking(){
 
+    let name = document.getElementById("name").value.trim();
+    let mobile = document.getElementById("mobile").value.trim();
+    let service = document.getElementById("service").value;
+    let date = document.getElementById("date").value;
+    let time = document.getElementById("time").value;
+    let address = document.getElementById("address").value.trim();
 
-let name =
-document.getElementById("name")
-.value.trim();
+    if(
+        name === "" ||
+        mobile === "" ||
+        service === "" ||
+        date === "" ||
+        time === "" ||
+        address === ""
+    ){
+        alert("कृपया सर्व माहिती भरा.");
+        return;
+    }
 
+    let bookingID =
+        "HK" + Math.floor(100000 + Math.random() * 900000);
 
-let mobile =
-document.getElementById("mobile")
-.value.trim();
+    let message =
+        "🧹 HOUSEKEEPING BOOKING\n\n" +
+        "Booking ID: " + bookingID + "\n" +
+        "Name: " + name + "\n" +
+        "Mobile: " + mobile + "\n" +
+        "Service: " + service + "\n" +
+        "Date: " + date + "\n" +
+        "Time: " + time + "\n" +
+        "Address: " + address + "\n\n" +
+        "Owner: Sambhaji Madane";
 
+    let whatsapp1 =
+        "https://wa.me/919822197880?text=" +
+        encodeURIComponent(message);
 
-let service =
-document.getElementById("service")
-.value;
+    let whatsapp2 =
+        "https://wa.me/918830270043?text=" +
+        encodeURIComponent(message);
 
+    alert(
+        "Booking तयार झाली! 🎉\n\n" +
+        "Booking ID: " + bookingID +
+        "\n\nआता WhatsApp नंबर निवडा."
+    );
 
-let date =
-document.getElementById("date")
-.value;
+    let oldBox = document.getElementById("whatsappButtons");
 
+    if(oldBox){
+        oldBox.remove();
+    }
 
-let time =
-document.getElementById("time")
-.value;
+    let box = document.createElement("div");
 
+    box.id = "whatsappButtons";
 
-let address =
-document.getElementById("address")
-.value.trim();
+    box.style.marginTop = "20px";
+    box.style.textAlign = "center";
 
+    box.innerHTML =
 
+        "<p style='font-weight:bold;margin-bottom:12px'>" +
+        "Booking WhatsApp वर पाठवा:" +
+        "</p>" +
 
-if(
+        "<a href='" + whatsapp1 +
+        "' target='_blank' " +
+        "style='display:block;background:#25D366;color:white;" +
+        "padding:14px;margin:8px 0;text-decoration:none;" +
+        "border-radius:5px;font-weight:bold;'>" +
 
-name === "" ||
+        "💬 WhatsApp – 98221 97880" +
 
-mobile === "" ||
+        "</a>" +
 
-service === "" ||
+        "<a href='" + whatsapp2 +
+        "' target='_blank' " +
+        "style='display:block;background:#25D366;color:white;" +
+        "padding:14px;margin:8px 0;text-decoration:none;" +
+        "border-radius:5px;font-weight:bold;'>" +
 
-date === "" ||
+        "💬 WhatsApp – 88302 70043" +
 
-time === "" ||
+        "</a>";
 
-address === ""
-
-){
-
-alert(
-"कृपया सर्व माहिती भरा."
-);
-
-return;
-
+    document
+        .querySelector(".booking")
+        .appendChild(box);
 }
 
 
